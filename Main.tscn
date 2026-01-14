@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://h8ar6jx3ovoy"]
+
+[ext_resource type="Script" uid="uid://tvi58fwd0d2m" path="res://scene_manager.gd" id="1_cm0pq"]
+[ext_resource type="Script" uid="uid://c3igbng8tbj0b" path="res://main.gd" id="1_fos0i"]
+[ext_resource type="Script" uid="uid://dkaw4ufwy2ryv" path="res://audio_manager.gd" id="2_fos0i"]
+[ext_resource type="Script" uid="uid://ckvpmi1y1apyc" path="res://save_manager.gd" id="3_3dxm6"]
+[ext_resource type="Script" uid="uid://0iijjq4y250w" path="res://ui_manager.gd" id="4_lgr22"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_fos0i")
+
+[node name="SceneManager" type="Node" parent="."]
+script = ExtResource("1_cm0pq")
+
+[node name="AudioManager" type="Node" parent="."]
+script = ExtResource("2_fos0i")
+
+[node name="SaveManager" type="Node" parent="."]
+script = ExtResource("3_3dxm6")
+
+[node name="UIManager" type="Node" parent="."]
+script = ExtResource("4_lgr22")

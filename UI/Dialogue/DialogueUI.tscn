@@ -1,0 +1,93 @@
+[gd_scene load_steps=5 format=3 uid="uid://beuk7wyn72i1o"]
+
+[ext_resource type="Script" uid="uid://xvxalewwx1or" path="res://UI/Dialogue/dialogue_ui.gd" id="1_pj3hg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pj3hg"]
+bg_color = Color(0, 0, 0, 0.19607843)
+border_width_left = 2
+border_width_bottom = 2
+border_color = Color(0.4817894, 0.48178953, 0.48178923, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a01c6"]
+bg_color = Color(0, 0, 0, 0.19607843)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.4817894, 0.48178953, 0.48178923, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c5ht"]
+bg_color = Color(0, 0, 0, 0.19607843)
+border_width_left = 5
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color(0.39688924, 0.3968893, 0.396889, 1)
+
+[node name="DialogueUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pj3hg")
+
+[node name="DialogWindow" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="NameBG_left" type="Panel" parent="DialogWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.25
+anchor_right = 0.031
+anchor_bottom = 0.6
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pj3hg")
+
+[node name="NameBG_top" type="Panel" parent="DialogWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.3
+anchor_bottom = 0.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a01c6")
+
+[node name="TextBG" type="Panel" parent="DialogWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.031
+anchor_top = 0.25
+anchor_right = 1.0
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4c5ht")
+
+[node name="NameContent" type="MarginContainer" parent="DialogWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.3
+anchor_bottom = 0.6
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 12
+
+[node name="Speaker" type="RichTextLabel" parent="DialogWindow/NameContent"]
+layout_mode = 2
+text = "Мирай"
+
+[node name="TextContent" type="MarginContainer" parent="DialogWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.031
+anchor_top = 0.25
+anchor_right = 1.0
+anchor_bottom = 0.9
+theme_override_constants/margin_left = 10
+
+[node name="Text" type="RichTextLabel" parent="DialogWindow/TextContent"]
+layout_mode = 2
+text = "Привет, давай сходим за кофе"

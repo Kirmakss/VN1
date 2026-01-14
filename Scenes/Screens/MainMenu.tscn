@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsdedrxgw8bq6"]
+
+[ext_resource type="Script" uid="uid://dhcx3adhkr4bv" path="res://Scenes/Screens/main_menu.gd" id="1_60bxw"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_60bxw")
+
+[node name="BackGround" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonsInMenu" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 67.0
+offset_right = 432.0
+offset_bottom = 279.0
+
+[node name="StartButton" type="Button" parent="ButtonsInMenu"]
+layout_mode = 2
+text = "Кнопка 1"
+
+[node name="SettingButton" type="Button" parent="ButtonsInMenu"]
+layout_mode = 2
+text = "Кнопка 2"
+
+[node name="ExitButton" type="Button" parent="ButtonsInMenu"]
+layout_mode = 2
+text = "Кнопка 3"
