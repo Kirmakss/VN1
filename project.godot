@@ -14,6 +14,10 @@ config/name="VN 1"
 run/main_scene="uid://h8ar6jx3ovoy"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
+[autoload]
+
+SettingsManager="*res://Managers/settings_manager.gd"
+
 [display]
 
 window/size/viewport_width=640

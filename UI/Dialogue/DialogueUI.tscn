@@ -91,3 +91,8 @@ theme_override_constants/margin_left = 10
 [node name="Text" type="RichTextLabel" parent="DialogWindow/TextContent"]
 layout_mode = 2
 text = "Привет, давай сходим за кофе"
+
+[node name="ChoicesContainer" type="VBoxContainer" parent="DialogWindow"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
