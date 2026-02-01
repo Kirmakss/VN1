@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b433xpxdt1ci4"]
+[gd_scene load_steps=6 format=3 uid="uid://b433xpxdt1ci4"]
 
 [ext_resource type="Script" uid="uid://c2ogisja20p68" path="res://Scenes/Screens/game_screen.gd" id="1_dmjq0"]
 [ext_resource type="Script" uid="uid://cjow07stgfmtp" path="res://Scenes/Screens/dialogue_controller.gd" id="2_xa8rc"]
 [ext_resource type="PackedScene" uid="uid://beuk7wyn72i1o" path="res://UI/Dialogue/DialogueUI.tscn" id="3_uweun"]
+[ext_resource type="PackedScene" uid="uid://beliprmrdon7y" path="res://UI/Dialogue/ChoicesOverlay.tscn" id="4_xa8rc"]
+[ext_resource type="PackedScene" uid="uid://84jpjb4sa18h" path="res://Managers/Debuger/DebugFlagsPanel.tscn" id="5_uweun"]
 
 [node name="GameScreen" type="Node2D"]
 script = ExtResource("1_dmjq0")
@@ -21,3 +23,9 @@ script = ExtResource("2_xa8rc")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="DialogueUI" parent="UI" instance=ExtResource("3_uweun")]
+
+[node name="ChoicesOverlay" parent="UI" instance=ExtResource("4_xa8rc")]
+visible = false
+
+[node name="DebugFlagsPanel" parent="UI" instance=ExtResource("5_uweun")]
+visible = false

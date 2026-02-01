@@ -1,0 +1,84 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=14 format=3 uid="uid://dp3f1254a54lo"]
+
+[ext_resource type="Script" uid="uid://bqou1ds8q3n8b" path="res://Dialogue/Resource scripts/dialogue_entry.gd" id="1_dy3ok"]
+[ext_resource type="Script" uid="uid://dfyodtye51xyf" path="res://Dialogue/Resource scripts/dialogue_choise.gd" id="2_xtivk"]
+[ext_resource type="Script" uid="uid://bbxpl144bkgxu" path="res://Dialogue/Resource scripts/dialogue_data.gd" id="3_xeikn"]
+
+[sub_resource type="Resource" id="Resource_dy3ok"]
+script = ExtResource("2_xtivk")
+text = "Пойти в лес"
+next_id = "forest"
+metadata/_custom_type_script = "uid://dfyodtye51xyf"
+
+[sub_resource type="Resource" id="Resource_xtivk"]
+script = ExtResource("2_xtivk")
+text = "Пойти в город"
+next_id = "city"
+metadata/_custom_type_script = "uid://dfyodtye51xyf"
+
+[sub_resource type="Resource" id="Resource_e42la"]
+script = ExtResource("1_dy3ok")
+id = "start"
+speaker = "Алиса"
+text = "Привет! Куда пойдем?"
+choices = Array[ExtResource("2_xtivk")]([SubResource("Resource_dy3ok"), SubResource("Resource_xtivk")])
+metadata/_custom_type_script = "uid://bqou1ds8q3n8b"
+
+[sub_resource type="Resource" id="Resource_xeikn"]
+script = ExtResource("1_dy3ok")
+id = "forest"
+speaker = "Алиса"
+text = "В лесу было тихо и спокойно"
+next_id = "after_trip"
+set_flags_on_enter = Array[String](["went_forest"])
+metadata/_custom_type_script = "uid://bqou1ds8q3n8b"
+
+[sub_resource type="Resource" id="Resource_x7gkn"]
+script = ExtResource("1_dy3ok")
+id = "city"
+speaker = "Алиса"
+text = "Город оказался шумным и людным."
+next_id = "after_trip"
+metadata/_custom_type_script = "uid://bqou1ds8q3n8b"
+
+[sub_resource type="Resource" id="Resource_r7ftv"]
+script = ExtResource("2_xtivk")
+text = "Спросить про лес"
+next_id = "forest_question"
+required_flags = Array[String](["went_forest"])
+metadata/_custom_type_script = "uid://dfyodtye51xyf"
+
+[sub_resource type="Resource" id="Resource_1s4kq"]
+script = ExtResource("2_xtivk")
+text = "Сменить тему"
+next_id = "end"
+metadata/_custom_type_script = "uid://dfyodtye51xyf"
+
+[sub_resource type="Resource" id="Resource_fjh1u"]
+script = ExtResource("1_dy3ok")
+id = "after_trip"
+speaker = "Алиса"
+text = "Ну что, продолжим разговор?"
+choices = Array[ExtResource("2_xtivk")]([SubResource("Resource_r7ftv"), SubResource("Resource_1s4kq")])
+metadata/_custom_type_script = "uid://bqou1ds8q3n8b"
+
+[sub_resource type="Resource" id="Resource_j400x"]
+script = ExtResource("1_dy3ok")
+id = "forest_question"
+speaker = "Алиса"
+text = "Тебе тоже нравится лес?"
+next_id = "end"
+metadata/_custom_type_script = "uid://bqou1ds8q3n8b"
+
+[sub_resource type="Resource" id="Resource_3j01e"]
+script = ExtResource("1_dy3ok")
+id = "end"
+speaker = "Алиса"
+text = "Ладно, пойдем дальше"
+next_id = "start"
+metadata/_custom_type_script = "uid://bqou1ds8q3n8b"
+
+[resource]
+script = ExtResource("3_xeikn")
+entries = Array[ExtResource("1_dy3ok")]([SubResource("Resource_e42la"), SubResource("Resource_xeikn"), SubResource("Resource_x7gkn"), SubResource("Resource_fjh1u"), SubResource("Resource_j400x"), SubResource("Resource_3j01e")])
+metadata/_custom_type_script = "uid://bbxpl144bkgxu"

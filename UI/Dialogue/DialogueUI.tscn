@@ -77,7 +77,6 @@ theme_override_constants/margin_top = 12
 
 [node name="Speaker" type="RichTextLabel" parent="DialogWindow/NameContent"]
 layout_mode = 2
-text = "Мирай"
 
 [node name="TextContent" type="MarginContainer" parent="DialogWindow"]
 layout_mode = 1
@@ -90,7 +89,6 @@ theme_override_constants/margin_left = 10
 
 [node name="Text" type="RichTextLabel" parent="DialogWindow/TextContent"]
 layout_mode = 2
-text = "Привет, давай сходим за кофе"
 
 [node name="ChoicesContainer" type="VBoxContainer" parent="DialogWindow"]
 layout_mode = 0

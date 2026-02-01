@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://beliprmrdon7y"]
+
+[ext_resource type="Script" uid="uid://dujiufdj64lfb" path="res://UI/Dialogue/choices_overlay.gd" id="1_1dnlm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l4lgn"]
+
+[node name="ChoicesOverlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1dnlm")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(400, 72)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -65.0
+offset_right = 200.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_l4lgn")
+
+[node name="ChoicesBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
