@@ -1,9 +1,11 @@
 extends Node2D
 
+@export var dialogue_resource_path: String = "res://Data/Dialogue/test_data.tres"
+
 @onready var controller: Node = $DialogueController
 @onready var dialogue_ui: Control = $UI/DialogueUI 
 @onready var choices_overlay: Control = $UI/ChoicesOverlay
-
+	
 func _ready() -> void:
 	print("GameScreen ready")
 	controller.line_changed.connect(dialogue_ui.show_line)

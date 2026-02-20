@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://Dialogue/Resource scripts/dialogue_entry.gd" id="1_vusy1"]
+[ext_resource type="Script" path="res://Dialogue/Resource scripts/dialogue_choise.gd" id="2_hbh5w"]
+[ext_resource type="Script" path="res://Dialogue/Resource scripts/dialogue_data.gd" id="3_g80wg"]
+
+[sub_resource type="Resource" id="Resource_auurp"]
+script = ExtResource("2_hbh5w")
+text = "В лес"
+next_id = "forest"
+
+[sub_resource type="Resource" id="Resource_05v7f"]
+script = ExtResource("2_hbh5w")
+text = "В город"
+next_id = "city"
+
+[sub_resource type="Resource" id="Resource_mlpha"]
+script = ExtResource("1_vusy1")
+id = "start"
+speaker = "Алиса"
+text = "Куда пойдем"
+choices = Array[ExtResource("2_hbh5w")]([SubResource("Resource_auurp"), SubResource("Resource_05v7f")])
+
+[sub_resource type="Resource" id="Resource_b7sgk"]
+script = ExtResource("1_vusy1")
+id = "forest"
+speaker = "Алиса"
+text = "В лесу тихо"
+next_id = "after_trip"
+set_flags_on_enter = Array[String](["went_forest"])
+
+[sub_resource type="Resource" id="Resource_w8eg8"]
+script = ExtResource("1_vusy1")
+id = "after_trip"
+speaker = "Алиса"
+text = "Пока"
+
+[sub_resource type="Resource" id="Resource_2j08v"]
+script = ExtResource("1_vusy1")
+id = "city"
+speaker = "Алиса"
+text = "В городе шумно"
+next_id = "after_trip"
+
+[resource]
+script = ExtResource("3_g80wg")
+entries = Array[ExtResource("1_vusy1")]([SubResource("Resource_mlpha"), SubResource("Resource_b7sgk"), SubResource("Resource_w8eg8"), SubResource("Resource_2j08v")])

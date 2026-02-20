@@ -11,18 +11,28 @@ config_version=5
 [application]
 
 config/name="VN 1"
-run/main_scene="uid://h8ar6jx3ovoy"
+run/main_scene="uid://bsdedrxgw8bq6"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
 [autoload]
 
 SettingsManager="*res://Managers/settings_manager.gd"
 FlagsManager="*res://Managers/flags_manager.gd"
+SaveManager="*res://Managers/save_manager.gd"
 
 [display]
 
 window/size/viewport_width=640
 window/size/viewport_height=360
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_width"
+
+[importer_defaults]
+
+csv_translation={
+"compress": true,
+"delimiter": 0
+}
 
 [input]
 

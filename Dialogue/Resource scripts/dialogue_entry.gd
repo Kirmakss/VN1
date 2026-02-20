@@ -15,3 +15,9 @@ class_name DialogueEntry
 
 ## Эти флаги будут СБРОШЕНЫ при входе в эту реплику
 @export var clear_flags_on_enter: Array[String] = []
+
+## Необходимый флаг
+@export var required_flags: Array[String] = []
+
+## Недопустимый флаг
+@export var forbidden_flags: Array[String] = []

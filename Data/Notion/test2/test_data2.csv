@@ -1,0 +1,7 @@
+﻿ID,Speaker,Text,Next,Choices,SetFlags,ClearFlags,RequiredFlags,ForbiddenFlags
+start,Алиса,Куда пойдем,,"В лес → forest
+В город → city",,,,
+forest,Алиса,В лесу тихо,after_trip,,went_forest,,,
+after_trip,Алиса,Пока,,,,,,
+city,Алиса,В городе шумно,after_trip,,,,,
+,,,,,,,,

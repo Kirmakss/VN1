@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsdedrxgw8bq6"]
+[gd_scene load_steps=5 format=3 uid="uid://bsdedrxgw8bq6"]
 
 [ext_resource type="Script" uid="uid://dhcx3adhkr4bv" path="res://Scenes/Screens/main_menu.gd" id="1_60bxw"]
+[ext_resource type="Texture2D" uid="uid://dlh2xlkajgji" path="res://Art/Sketches on parchment with heart logo.png" id="2_7u1fx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7u1fx"]
+
+[sub_resource type="Theme" id="Theme_f35bi"]
+Button/colors/font_color = Color(0.3891678, 0.30959147, 0.14386633, 1)
+Button/colors/font_focus_color = Color(0.4117647, 0.54901963, 0.8901961, 1)
+Button/colors/font_hover_color = Color(0.41164893, 0.550462, 0.8889811, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.5563875, 0.6693992, 0.933575, 1)
+Button/styles/focus = SubResource("StyleBoxEmpty_7u1fx")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -12,25 +23,48 @@ grow_vertical = 2
 script = ExtResource("1_60bxw")
 
 [node name="BackGround" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7u1fx")
+expand_mode = 1
 
-[node name="ButtonsInMenu" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 196.0
-offset_top = 67.0
-offset_right = 432.0
-offset_bottom = 279.0
+[node name="Panel" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -176.0
+offset_right = 157.0
+grow_vertical = 0
+theme = SubResource("Theme_f35bi")
+theme_override_constants/margin_left = 46
+theme_override_constants/margin_bottom = 40
 
-[node name="StartButton" type="Button" parent="ButtonsInMenu"]
+[node name="ButtonsInMenu" type="VBoxContainer" parent="Panel"]
+clip_contents = true
 layout_mode = 2
-text = "Кнопка 1"
 
-[node name="SettingButton" type="Button" parent="ButtonsInMenu"]
+[node name="NewGameButton" type="Button" parent="Panel/ButtonsInMenu"]
 layout_mode = 2
-text = "Кнопка 2"
+text = "Новая игра"
+flat = true
 
-[node name="ExitButton" type="Button" parent="ButtonsInMenu"]
+[node name="ContinueButton" type="Button" parent="Panel/ButtonsInMenu"]
 layout_mode = 2
-text = "Кнопка 3"
+text = "Продолжить"
+flat = true
+
+[node name="SettingsButton" type="Button" parent="Panel/ButtonsInMenu"]
+layout_mode = 2
+text = "Настройки"
+flat = true
+
+[node name="ExitButton" type="Button" parent="Panel/ButtonsInMenu"]
+layout_mode = 2
+text = "Выйти"
+flat = true
